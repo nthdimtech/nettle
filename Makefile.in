@@ -17,7 +17,7 @@ OPT_HOGWEED_OBJS = @OPT_HOGWEED_OBJS@
 
 OPT_NETTLE_SOURCES = @OPT_NETTLE_SOURCES@
 
-SUBDIRS = tools testsuite examples
+#SUBDIRS = tools testsuite examples
 
 include config.make
 
@@ -34,8 +34,12 @@ getopt_TARGETS = $(getopt_SOURCES:.c=.$(OBJEXT))
 internal_SOURCES = nettle-internal.c
 internal_TARGETS = $(internal_SOURCES:.c=.$(OBJEXT))
 
+<<<<<<< HEAD
 TARGETS = $(getopt_TARGETS) $(internal_TARGETS) \
 	  $(LIBTARGETS) $(SHLIBTARGETS)
+=======
+TARGETS = $(LIBTARGETS)
+>>>>>>> Make build suitable for cortexM0/M4 target needing only AES
 
 DOCTARGETS = @IF_DOCUMENTATION@ nettle.info nettle.html nettle.pdf
 
