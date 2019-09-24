@@ -17,7 +17,7 @@ OPT_HOGWEED_OBJS = @OPT_HOGWEED_OBJS@
 
 OPT_NETTLE_SOURCES = @OPT_NETTLE_SOURCES@
 
-SUBDIRS = tools testsuite examples
+#SUBDIRS = tools testsuite examples
 
 include config.make
 
@@ -34,20 +34,12 @@ getopt_TARGETS = $(getopt_SOURCES:.c=.$(OBJEXT))
 internal_SOURCES = nettle-internal.c
 internal_TARGETS = $(internal_SOURCES:.c=.$(OBJEXT))
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-TARGETS = $(getopt_TARGETS) $(internal_TARGETS) \
-	  $(LIBTARGETS) $(SHLIBTARGETS)
-=======
 TARGETS = $(LIBTARGETS)
->>>>>>> Make build suitable for cortexM0/M4 target needing only AES
-=======
-TARGETS = aesdata$(EXEEXT_FOR_BUILD) desdata$(EXEEXT_FOR_BUILD) \
-          twofishdata$(EXEEXT_FOR_BUILD) shadata$(EXEEXT_FOR_BUILD) \
-          gcmdata$(EXEEXT_FOR_BUILD) \
-	  $(getopt_TARGETS) $(internal_TARGETS) \
-	  $(LIBTARGETS) $(SHLIBTARGETS)
->>>>>>> Revert "Make build suitable for cortexM0/M4 target needing only AES"
+#TARGETS = aesdata$(EXEEXT_FOR_BUILD) desdata$(EXEEXT_FOR_BUILD) \
+#          twofishdata$(EXEEXT_FOR_BUILD) shadata$(EXEEXT_FOR_BUILD) \
+#          gcmdata$(EXEEXT_FOR_BUILD) \
+#	  $(getopt_TARGETS) $(internal_TARGETS) \
+#	  $(LIBTARGETS) $(SHLIBTARGETS)
 
 DOCTARGETS = @IF_DOCUMENTATION@ nettle.info nettle.html nettle.pdf
 
@@ -100,7 +92,6 @@ nettle_SOURCES = aes-decrypt-internal.c aes-decrypt.c \
 		 camellia256-set-decrypt-key.c \
 		 camellia256-meta.c \
 		 cast128.c cast128-meta.c cbc.c \
-<<<<<<< HEAD
 		 ccm.c ccm-aes128.c ccm-aes192.c ccm-aes256.c cfb.c \
 		 siv-cmac.c siv-cmac-aes128.c siv-cmac-aes256.c \
 		 cnd-memcpy.c \
@@ -108,13 +99,6 @@ nettle_SOURCES = aes-decrypt-internal.c aes-decrypt.c \
 		 chacha-poly1305.c chacha-poly1305-meta.c \
 		 chacha-set-key.c chacha-set-nonce.c \
 		 ctr.c ctr16.c des.c des3.c \
-=======
-		 ccm.c ccm-aes128.c ccm-aes192.c ccm-aes256.c \
-		 chacha-crypt.c chacha-core-internal.c \
-		 chacha-poly1305.c chacha-poly1305-meta.c \
-		 chacha-set-key.c chacha-set-nonce.c \
-		 ctr.c des.c des3.c des-compat.c \
->>>>>>> Revert "Make build suitable for cortexM0/M4 target needing only AES"
 		 eax.c eax-aes128.c eax-aes128-meta.c \
 		 gcm.c gcm-aes.c \
 		 gcm-aes128.c gcm-aes128-meta.c \
@@ -122,7 +106,6 @@ nettle_SOURCES = aes-decrypt-internal.c aes-decrypt.c \
 		 gcm-aes256.c gcm-aes256-meta.c \
 		 gcm-camellia128.c gcm-camellia128-meta.c \
 		 gcm-camellia256.c gcm-camellia256-meta.c \
-<<<<<<< HEAD
 		 cmac.c cmac64.c cmac-aes128.c cmac-aes256.c cmac-des3.c \
 		 gost28147.c gosthash94.c gosthash94-meta.c \
 		 hmac.c hmac-gosthash94.c hmac-md5.c hmac-ripemd160.c \
@@ -137,18 +120,6 @@ nettle_SOURCES = aes-decrypt-internal.c aes-decrypt.c \
 		 nettle-meta-ciphers.c nettle-meta-hashes.c \
 		 pbkdf2.c pbkdf2-hmac-gosthash94.c pbkdf2-hmac-sha1.c \
 		 pbkdf2-hmac-sha256.c \
-=======
-		 gosthash94.c gosthash94-meta.c \
-		 hmac.c hmac-md5.c hmac-ripemd160.c hmac-sha1.c \
-		 hmac-sha224.c hmac-sha256.c hmac-sha384.c hmac-sha512.c \
-		 knuth-lfib.c \
-		 md2.c md2-meta.c md4.c md4-meta.c \
-		 md5.c md5-compress.c md5-compat.c md5-meta.c \
-		 memxor.c memxor3.c \
-		 nettle-meta-aeads.c nettle-meta-armors.c \
-		 nettle-meta-ciphers.c nettle-meta-hashes.c \
-		 pbkdf2.c pbkdf2-hmac-sha1.c pbkdf2-hmac-sha256.c \
->>>>>>> Revert "Make build suitable for cortexM0/M4 target needing only AES"
 		 poly1305-aes.c poly1305-internal.c \
 		 realloc.c \
 		 ripemd160.c ripemd160-compress.c ripemd160-meta.c \
