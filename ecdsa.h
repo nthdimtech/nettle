@@ -71,6 +71,10 @@ ecdsa_generate_keypair (struct ecc_point *pub,
 			struct ecc_scalar *key,
 			void *random_ctx, nettle_random_func *random);
 
+void
+ecdsa_generate_pub_from_priv (struct ecc_point *pub,
+			struct ecc_scalar *key);
+
 /* Low-level ECDSA functions. */
 mp_size_t
 ecc_ecdsa_sign_itch (const struct ecc_curve *ecc);
