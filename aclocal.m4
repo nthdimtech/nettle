@@ -547,6 +547,7 @@ AC_DEFUN([GMP_PROG_CC_FOR_BUILD_WORKS],
 # remove anything that might look like compiler output to our "||" expression
 rm -f conftest* a.out b.out a.exe a_out.exe
 cat >conftest.c <<EOF
+#include<stdio.h>
 int
 main ()
 {
